@@ -12,9 +12,9 @@ owner:
   avatar:         bio-photo.jpg
   email:          sven@intothespirit.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        https://twitter.com/sohooo
-  github:         https://github.com/sohooo
-  tumblr:         http://blog.intothespirit.com
+  twitter:        sohooo
+  github:         sohooo
+  tumblr:         sohooo
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    
 
