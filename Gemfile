@@ -6,3 +6,6 @@ gem 'coderay'
 gem 'rake'
 gem 'thor'
 gem 'activesupport'
+
+# generate favicons
+gem "favicon_maker"

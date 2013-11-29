@@ -1,6 +1,6 @@
-title:            Site Title
-description:      Describe your website here.
-logo:             site-logo.png
+title:            txt
+description:      articles on technology
+logo:             logo.png
 disqus_shortname: 
 search:           true
 #Change url to your domain. Leave localhost server or blank when working locally.
@@ -8,18 +8,13 @@ url:              http://localhost:4000
 
 # Owner/author information
 owner:
-  name:           Your Name
+  name:           Sven Sporer
   avatar:         bio-photo.jpg
-  email:          you@email.com
+  email:          sven@intothespirit.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
+  twitter:        https://twitter.com/sohooo
+  github:         https://github.com/sohooo
+  tumblr:         http://blog.intothespirit.com
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    
 
@@ -43,7 +38,7 @@ links:
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Europe/Vienna
 future:      true
 pygments:    true
 markdown:    kramdown
