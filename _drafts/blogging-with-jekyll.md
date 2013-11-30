@@ -6,7 +6,7 @@ category: articles
 tags: [middleman, blogging]
 ---
 
-Let's play with [Middleman](http://middlemanapp.com/), a Ruby framework for static website generation. There are a lot of useful [extensions](http://directory.middlemanapp.com/#/extensions/all). This post shows the installation and usage of the following:
+Hello there! What you're viewing here is a blog post from [Middleman](http://middlemanapp.com/), a Ruby framework for static website generation. There are a lot of useful [extensions](http://directory.middlemanapp.com/#/extensions/all). This post shows the installation and usage of the following:
 
 * [blogging extension](http://middlemanapp.com/blogging/)
 * [middleman-syntax](https://github.com/middleman/middleman-syntax) 
