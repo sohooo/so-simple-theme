@@ -4,10 +4,10 @@ permalink: /theme-setup/index.html
 title: Theme Setup
 description: "Instructions on how to install and customize the Jekyll theme So Simple."
 modified: 2013-09-11
-tags: [Jekyll, theme, install, setup]
+tags: [jekyll, theme, install, setup]
 ---
 
-General notes and suggestions for customizing **So Simple Theme**.
+This post is included in the awesome Jekyll theme called [So Simple](http://mademistakes.com/articles/so-simple-jekyll-theme/) you're looking at. All credits to [Michael Rose](http://mademistakes.com)! These are general notes and suggestions for customizing **So Simple Theme**.
 
 ## Basic Setup for a new Jekyll site
 
