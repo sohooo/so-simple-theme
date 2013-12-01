@@ -1,33 +1,30 @@
 ---
 layout: page
 permalink: /about/index.html
-title: About the Jekyll Theme
+title: About me and this site
 tags: [Jekyll, theme, simple, minimal, minimalism, responsive]
 modified: 2013-09-13
 image:
-  feature: so-simple-sample-image-4.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
+  feature: kitzbuehel.jpg
+  credit: Sven Sporer
+  creditlink: http://intothespirit.com
 ---
 
-Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the followup to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes).
+Hi, I'm Sven Sporer and I live in Vienna, the beautiful capital of Austria. I have a masters degree in Information Management & Computer Security. Currently, I work as a Oracle and PostgreSQL DBA[^1].
 
-## So Simple Theme is all about:
+I'm interested in everything related to web technology, photography, design and beautiful code. You can also find me at these places:
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
-* Minimal embellishments and subtle animations. 
-* Readable typography to make your words shine.
-* Support for large images to call out your favorite posts.
-* Disqus comments if you choose to enable.
-* Simple and clear permalink structure[^1].
-* Tags for [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) for a better social sharing experience.
-* Vanilla [custom 404 page]({{ site.url }}/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting](http://mmistakes.github.io/articles/so-simple-theme/code-highlighting-post/) to make your code examples look snazzy.
-* Simple search that overlays results based on post title.
-* [Grunt build script]({{ site.url }}/theme-setup/index.html#theme-development) for easier theme development.
-* [Sitemap](https://github.com/mmistakes/so-simple-theme/blob/master/sitemap.xml) for search engines
+* [intothespirit.com](http://intothespirit.com), my portfolio site
+* [svensporer.net](http://svensporer.net), my vcard site
 
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a>
 
-[^1]: Example: *domain.com/category-name/post-title*
+This website
+------------
+
+This site [txt.intothespirit.com]({{ site.url }}) features articles mainly about the web and technology. It's powered by [Jekyll](http://jekyllrb.com) and transforms plain text files written in Markdown into beautiful HTML. The post [Theme Setup]({{ site.url }}/theme-setup/) shows all the details.
+
+If you have any questions about one of my projects, or just want to say hi!, just mail me at <a href="mailto:hi@intothespirit.com" class="mail">hi@intothespirit.com</a>.
+
+
+
+[^1]: Database Administrator; however, my focus is everything around the database, using Ruby/Bash to automate as much as possible, bootstrapping with [Puppet](http://puppetlabs.com)/[Foreman](http://theforeman.org), testing with [Jenkins](http://jenkins-ci.org)/[Cucumber](http://cukes.info)/[RSpec](http://rspec.info), etc.
