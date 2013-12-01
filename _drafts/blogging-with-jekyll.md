@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Middleman Blog Setup
-description: "Get starting with Middleman, the awesome static blogging engine"
+title: Blogging with Jekyll
+description: "Bootstrap a Jekyll blog with an awesome theme, with just a few config changes"
 category: articles
-tags: [middleman, blogging]
+tags: [jekyll, blogging]
 ---
 
 Hello there! What you're viewing here is a blog post from [Middleman](http://middlemanapp.com/), a Ruby framework for static website generation. There are a lot of useful [extensions](http://directory.middlemanapp.com/#/extensions/all). This post shows the installation and usage of the following:
