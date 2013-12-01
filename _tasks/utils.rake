@@ -3,7 +3,7 @@
 # If you want the script to manage the variable {{site.url}} for you,
 # set the values of
 #
-# $deploy_url = "http://www.example.com/somedir"    # where the system will live
+$deploy_url = "http://txt.intothespirit.com"        # where the system will live
 $deploy_dir = "ss:~/txt/"                           # where the sources live
 # $post_dir   = "_posts/"                           # where posts are created
 desc 'Clean up generated site'
