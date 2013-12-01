@@ -14,7 +14,7 @@ end
 desc 'Preview on local machine (server with --auto)'
 task :preview => :clean do
   set_url('http://localhost:4000')
-  sh "foreman"
+  sh "foreman start"
 end
 
 desc 'Static build (build using filesystem)'
