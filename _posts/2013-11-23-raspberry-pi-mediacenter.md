@@ -6,6 +6,8 @@ category: articles
 tags: [raspberry pi, mediacenter]
 ---
 
+![Raspberry Pi Model B](/images/pi-modelb.png)
+
 There's a whole lot of XMBC mediacenter implementations for the [Raspberry Pi](http://www.raspberrypi.org). After trying [OpenELEC](http://openelec.tv), I recently switched to [XBian](http://www.xbian.org) for its auto-updating and backup features. What is XBian?
 
 > XBian is a small, fast and lightweight media center distro for the Raspberry Pi, based on a minimal Raspbian image. Our slogan is “XBMC on Raspberry Pi, the bleeding edge” as our main focus is delivering the fastest XBMC solution for the Raspberry Pi.
