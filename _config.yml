@@ -53,6 +53,9 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  header_offset: 2
+  transliterated_header_ids: true
   use_coderay: true
 
   coderay:
@@ -64,3 +67,4 @@ kramdown:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+gems: ['coderay_bash']
