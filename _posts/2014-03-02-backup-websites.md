@@ -10,8 +10,9 @@ This article shows a way to back up a content management system like Wordpress, 
 
 These backups are created at __specified intervals__ (daily, weekly, monthly) whithout any interaction needed on our part.
 
-Advantages of backups to your machine
 
+Advantages of backups to your machine
+-------------------------------------
 
 - cheap storage space
 - fast download speed

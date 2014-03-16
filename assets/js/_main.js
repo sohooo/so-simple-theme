@@ -27,3 +27,4 @@ $('#site-nav').click(function(event){
 $(function() {
 	$("article").fitVids();
 });
+
