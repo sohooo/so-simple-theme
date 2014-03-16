@@ -6,9 +6,6 @@ category: articles
 tags: [unison, sync]
 ---
 
-Syncing with Unison
--------------------
-
 When it comes to synchronization tools, the first thing which comes to mind: [there are a lot of them](http://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software). Most of those tools have their use in different scenarios, like Dropbox for sharing of (limited amounts of) non-sensible data.
 
 Here we take a look at [Unison](http://www.cis.upenn.edu/~bcpierce/unison/) to sync various folders on our computer with an USB drive.
@@ -19,7 +16,7 @@ Why Unison?
 
 Why should you care? Well, the [Unison website](http://www.cis.upenn.edu/~bcpierce/unison/) lists a couple of features to answer that, such as:
 
-* portability; you can even sync a Windows laptop with a Unix server
+* portability; you can even sync an ordinary Windows laptop with a Unix server
 * no superuser privileges needed
 * network bandwith optimization
 * clear and precise specification
@@ -41,12 +38,12 @@ Setup
 
 The latest stable version can be found on the [official download mirror](http://www.seas.upenn.edu/~bcpierce/unison//download/releases/stable/). However, we [Homebrew](http://brew.sh/) users on Mac OS X simply do:
 
-~~~ bash
+{% highlight bash %}
 brew install unison
 # <installation process>
 unison -version
 unison version 2.40.102
-~~~
+{% endhighlight %}
 
 
 Usage
@@ -67,15 +64,15 @@ Here are some things I learned in the process of using Unison.
 
 Most USB sticks are formatted with FAT, one of the few truly portable (if poorly featured) filesystems. We don't want Unison to consider file permissions, as FAT only supports a subset of the permissions compared to \*nix systems:
 
-~~~ ruby
+{% highlight ruby %}
 perms = 0
-~~~
+{% endhighlight %}
 
 You can also protect your sync folders from being wiped by accident, which can happen when dealing with mount points and removable media. To Unison, an unmounted drive looks like a missing directory, which is dutifully replicated to your local path. You can prevent this with:
 
-~~~ ruby
+{% highlight ruby %}
 mountpoint = <somefile>
-~~~
+{% endhighlight %}
 
 From the docs about [Mount Points and Removable Media](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#mountpoints):
 
@@ -86,9 +83,9 @@ From the docs about [Mount Points and Removable Media](http://www.cis.upenn.edu/
 
 Syncing resource forks is not worth the hassle, so ignore them:
 
-~~~ ruby
+{% highlight ruby %}
 rsrc = false
-~~~
+{% endhighlight %}
 
 Also, ignore those special OS X files wich even may be updated during a sync. Take a look at [my `ignores` file](https://github.com/sohooo/dotunison/blob/master/ignores).
 

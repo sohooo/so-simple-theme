@@ -31,7 +31,7 @@ Installation
 Download an XBian image [from the official website](http://www.xbian.org/download/) and extract the .img file. You can follow [the eLinux guide](http://elinux.org/RPi_Easy_SD_Card_Setup#Using_command_line_tools_.281.29) to set up the SD card. Assuming you use OS X:
 
 
-~~~ bash
+{% highlight bash %}
 # identify the disk (not partition)
 diskutil list
 
@@ -40,7 +40,7 @@ diskutil unmountDisk /dev/disk2
 
 # copy image
 sudo dd if=~/Downloads/xbian.beta2.2013-11-16rs.img of=/dev/disk2 bs=1m
-~~~
+{% endhighlight %}
 
 That's it, now boot the RPi with your shiny new XBian OS.
 
@@ -56,12 +56,12 @@ Adding Media
 
 Your movies and TV shows should be organized according to the [naming conventions](http://wiki.xbmc.org/index.php?title=Video_library/Naming_files):
 
-~~~ bash
+{% highlight bash %}
 # pattern for movies: title (year) extension
 \Movies\Pulp Fiction (1994).avi
 \Movies\Reservoir Dogs (1992).avi
 \Movies\The Usual Suspects (1995).avi
-~~~
+{% endhighlight %}
 
 This allows XBMC to pick up all the relevant assets (cover art, rating, ...). Now follow [the guide to add media sources](http://wiki.xbmc.org/index.php?title=Video_library/Adding_media_sources) for every content type (movies, tv shows) you want to include.
 

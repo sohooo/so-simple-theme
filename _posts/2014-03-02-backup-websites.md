@@ -11,7 +11,7 @@ This article shows a way to back up a content management system like Wordpress, 
 These backups are created at __specified intervals__ (daily, weekly, monthly) whithout any interaction needed on our part.
 
 Advantages of backups to your machine
--------------------------------------
+
 
 - cheap storage space
 - fast download speed
@@ -39,7 +39,7 @@ Using rsnapshot
 
 The directory structure looks something like this:
 
-~~~ bash
+{% highlight bash %}
 /path/to/backups $ tree -L 2
 .
 ├── daily.0
@@ -56,7 +56,7 @@ The directory structure looks something like this:
 ├── monthly.0
 ├── ...
 └── monthly.11
-~~~
+{% endhighlight %}
 
 
 
@@ -72,7 +72,7 @@ The [rsnapshot configuration] happens in `/etc/rsnapshot.conf`, using a `TAB` se
 
 The following config can be used as a guideline. It shows most of the options I use while ignoring the boring defaults. Adjust the paths to suit your needs. The important settings are commented or described later.
 
-~~~ bash
+{% highlight bash %}
 #################################################
 # rsnapshot.conf - rsnapshot configuration file #
 #################################################
@@ -154,7 +154,7 @@ backup		user@server:/path/to/website1/	website1/
 # website2
 #backup_script	/usr/bin/ssh user@server '/path/to/website2/dbbackup.sh'	unused2
 backup		user@server:/path/to/website2/	website2/
-~~~
+{% endhighlight %}
 
 Some information about the important options:
 
@@ -166,7 +166,7 @@ Some information about the important options:
 
 I use the `postexec` option to run the following script after the backup. It removes the `unused` directories we had to define with the `backup_script` option, but don't have any purpose. We also write the disk usage with `rsnapshot du` to the config file. I use [Geektool] to show the contents of the backup logfile on my desktop.
 
-~~~ bash
+{% highlight bash %}
 #!/bin/bash
 
 backup_path=/home/xbian/downloads/backups
@@ -179,7 +179,7 @@ find $backup_path -type d -name "unused[0-9]" -delete
 # log info
 echo "disk usage:" >> $backup_log
 rsnapshot du       >> $backup_log
-~~~
+{% endhighlight %}
 
 ### Test
 
@@ -194,7 +194,7 @@ Backup Wordpress
 
 The above configuration takes care of the files. To include the MySQL database, we simply `mysqldump` it to the `wp-content/backups` directory. The following [database backup script] is placed in the same path as `wp-config.php`, as it uses the database credentials to connect to the Wordpress database.
 
-~~~ bash
+{% highlight bash %}
 #!/bin/bash
 
 # fail on error
@@ -239,7 +239,7 @@ mysqldump --user=${NAME} --password=${PASS} ${NAME} | gzip -c > $FILE
 # show dump size
 echo "total db dumps size in ${DEST}:"
 du -sh $DEST
-~~~
+{% endhighlight %}
 
 Save this script as `dbbackup.sh` in your Wordpress directory, make it executable (`chmod 755`), and run it. It should produce a dump file in `wp-content/backups` (see `DEST` variable).
 
@@ -252,7 +252,7 @@ Schedule backups with cron
 
 Finally, we schedule the backup jobs to run according to their tags. Put the following code in a file `backup_schedule.cron`, modify it to your needs, and load it with `crontab backup_schedule.cron` in the `crontab` of your current user.
 
-~~~ bash
+{% highlight bash %}
 # daily backup at 0:00
 0 0 * * *	rsnapshot daily >> /home/xbian/rsnapshot/backup.log 2>&1
 
@@ -261,7 +261,7 @@ Finally, we schedule the backup jobs to run according to their tags. Put the fol
 
 # monthly backup on 1st at 6:00
 0 6 1 * *	rsnapshot monthly >> /home/xbian/rsnapshot/backup.log 2>&1
-~~~
+{% endhighlight %}
 
 ### Notifications
 
@@ -271,10 +271,10 @@ So, the rsnapshot option `verbose 2` works in our favor as it only outputs only 
 
 You can forward the mails to your inbox with a `.forward` file in your home dir:
 
-~~~ bash
+{% highlight bash %}
 $ cat ~/.forward
 myaddress@gmail.com
-~~~
+{% endhighlight %}
 
 
 Summary

@@ -24,10 +24,10 @@ After you're done personalizing your `_config.yml`, it's time to prepare the blo
 
 For drafts, create the directory `_drafts` in your site root, and put your markdown posts in there:
 
-~~~ bash
+{% highlight bash %}
 |-- _drafts/
 |   |-- a-draft-post.md
-~~~
+{% endhighlight %}
 
 The `jekyll --serve` preview assigns the modification time as `date`.
 
@@ -35,19 +35,19 @@ The `jekyll --serve` preview assigns the modification time as `date`.
 
 The Rake tasks I describe in the following sections are structured like this:
 
-~~~ bash
+{% highlight bash %}
 Rakefile
 |-- _tasks/
 |   |-- icons.rake
 |   |-- utils.rake
-~~~
+{% endhighlight %}
 
 The `Rakefile` loads all tasks:
 
-~~~ ruby
+{% highlight ruby %}
 # Load custom rake scripts
 Dir['_tasks/*.rake'].each { |r| load r }
-~~~
+{% endhighlight %}
 
 Favicons
 --------
@@ -58,7 +58,7 @@ Managing all the different favicon formats can be a pain in the ass, and that's 
 
 [Here's the code](https://github.com/sohooo/so-simple-theme/blob/master/_tasks/icons.rake):
 
-~~~ ruby
+{% highlight ruby %}
 require 'favicon_maker'
 
 desc 'generate favicons based on avatar.png'
@@ -73,7 +73,7 @@ task :icons do
     puts "Created favicon: #{filepath}"
   end
 end
-~~~
+{% endhighlight %}
 
 
 Build & Deploy
@@ -93,11 +93,11 @@ If you want to change stylesheets and JavaScript files, [install Node.js](http:/
 
 In order to use both the Jekyll and Grunt watcher, I created [a simple Procfile](https://github.com/sohooo/so-simple-theme/blob/master/Procfile) for [foreman](http://ddollar.github.io/foreman/):
 
-~~~ bash
+{% highlight bash %}
 # Procfile
 jekyll: jekyll serve --watch --drafts
 grunt: grunt watch
-~~~
+{% endhighlight %}
 
 Now, [my `rake preview` task](https://github.com/sohooo/so-simple-theme/blob/master/_tasks/utils.rake#L15-18) starts both Jekyll and Grunt, watching for every possible change.
 

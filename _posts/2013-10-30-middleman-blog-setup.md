@@ -20,7 +20,7 @@ The blogging extension offers support for, well, blogging, articles and tagging.
 
 The installation is simple:
 
-~~~bash
+{% highlight bash %}
 # install gem
 gem install middleman-blog --no-document
 
@@ -30,37 +30,37 @@ middleman init MY_BLOG_PROJECT --template=blog
 # preview the blog
 cd MY_BLOG_PROJECT
 bundle exec middleman
-~~~
+{% endhighlight %}
 
 Syntax Highlighting
 -------------------
 
 As noted above, `middleman-blog` is just one of the [many extensions](http://directory.middlemanapp.com/#/extensions/all) for Middleman. The following steps show the [setup](https://github.com/middleman/middleman-syntax) of the `middleman-syntax` extension for syntax-highlighted code.
 
-~~~ruby
+{% highlight ruby %}
 # add to Gemfile
 gem "middleman-syntax"
-~~~
+{% endhighlight %}
 
 Extensions need to be activated in the `config.ru` configuration file. Additional settings can be provided to support highlighted code in Markdown code blocks, similar to Github.
 
-~~~ruby
+{% highlight ruby %}
 # config.ru settings
 activate :syntax
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true
-~~~
+{% endhighlight %}
 
 The code blocks should now be wrapped in `pre class="highlight"` tags, but without some CSS, the code stays boring. We could provide any Pygments-compatible stylesheet, or let Rouge generate one of [its themes](https://github.com/jayferd/rouge/tree/master/lib/rouge/themes) by creating a file `stylesheets/syntax.css.erb` and adding:
 
-~~~erb
+{% highlight erb %}
 <%= Rouge::Themes::ThankfulEyes.render(:scope => '.highlight') %>
-~~~
+{% endhighlight %}
 
 We need to include that stylesheet in our `layout.erb`'s `<head>`:
 
-~~~erb
+{% highlight erb %}
 <%= stylesheet_link_tag 'syntax' %>
-~~~
+{% endhighlight %}
 
 The code should now be ablaze with colors.

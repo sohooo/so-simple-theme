@@ -34,7 +34,7 @@ The `hdparm` commandline utility shows and configures hardware parameters of our
 
 The following commands require `sudo` and the disk name, or even better: the UUID:
 
-~~~ bash
+{% highlight bash %}
 # list UUID of all disks
 sudo blkid
 
@@ -47,11 +47,11 @@ ls -la /dev/disk/by-uuid/
 # let's remember this
 # /dev/sda1: LABEL="lacie" UUID="d5cc9cdd-6425-480c-bafb-9653cec72e64" TYPE="ext4" 
 disk=/dev/disk/by-uuid/d5cc9cdd-6425-480c-bafb-9653cec72e64
-~~~
+{% endhighlight %}
 
 Now, let's get some hardware infos about our disk:
 
-~~~ bash
+{% highlight bash %}
 # the params we use
 sudo hdparm -h
  -I   Detailed/current information directly from drive
@@ -61,14 +61,14 @@ sudo hdparm -h
 
 # general information
 sudo hdparm -I $disk
-~~~
+{% endhighlight %}
 
 Configuring standby mode
 ------------------------
 
 We can also view and set the power mode:
 
-~~~ bash
+{% highlight bash %}
 # power mode status
 sudo hdparm -C $disk
 
@@ -86,7 +86,7 @@ sudo hdparm -C $disk
 
 /dev/disk/by-uuid/d5cc9cdd-6425-480c-bafb-9653cec72e64:
  drive state is:  standby
-~~~
+{% endhighlight %}
 
 Finally, we use `hdparm -S <arg>` to set a more aggressive standby timeout. We read the
 [hdparm man page](http://linux.die.net/man/8/hdparm) to get some infos about the usage and smile while reading this funky explanation:
@@ -95,12 +95,12 @@ Finally, we use `hdparm -S <arg>` to set a more aggressive standby timeout. We r
 
 To permanently set harddisk options like the standby timeout,  we could add an entry in `/etc/hdparm.conf`. However at the time of this writing, some Debian-based distros seem to lose these settings after a reboot, so we decide to add the following to `/etc/rc.local`:
 
-~~~ bash
+{% highlight bash %}
 # sleep after 10min for lacie disk
 sleep 5
 uuid=d5cc9cdd-6425-480c-bafb-9653cec72e64
 hdparm -S 120 /dev/disk/by-uuid/$uuid
-~~~
+{% endhighlight %}
 
 
 Taming Sickbeard
@@ -121,7 +121,7 @@ Looking for a way to manually trigger the post-processing of downloaded episodes
 
 To fill the gap in the meantime, I wrote the following simple Ruby script ([Github Gist](https://gist.github.com/sohooo/8493102)). It uses [Mechanize](http://mechanize.rubyforge.org) to effectively visit our Sickbeard webapp and toggle the manual post-processing:
 
-~~~ ruby
+{% highlight ruby %}
 require "rubygems"
 require "mechanize"
  
@@ -140,6 +140,6 @@ agent.get(site) do |page|
  
   puts processed.search("#content")
 end
-~~~
+{% endhighlight %}
 
 Now we can run this script to trigger post-processing via `cron` whenever we like.
