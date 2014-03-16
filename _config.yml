@@ -54,7 +54,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  header_offset: 2
+  header_offset: 0
   transliterated_header_ids: true
   use_coderay: true
 

@@ -150,7 +150,7 @@ body {
 }
 .site-description {
 	margin-top: 0;
-	font-family: @alt-font;
+	font-family: @base-font;
 	.font-rem(16);
 	font-weight: 400;
 	font-style: italic;
@@ -191,8 +191,7 @@ body {
 .entry-header {
 	max-width: 640px;
 	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
+  margin: 60px auto;
 	@media @large {
 		max-width: 100%;
 		margin-right: 0;
@@ -200,6 +199,7 @@ body {
 	}
 }
 .entry-tags {
+  font-family: @alt-font;
 	display: block;
 	margin-top: 2em;
 	text-transform: uppercase;
@@ -211,7 +211,7 @@ span + .entry-title {
 	margin-top: 0;
 }
 .entry-title {
-	font-family: @alt-font;
+	font-family: @base-font;
 	font-style: italic;
 	.font-rem(36);
 	font-weight: 700;

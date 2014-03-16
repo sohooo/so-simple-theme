@@ -1,14 +1,21 @@
 // Body
 // --------------------------------------------------
 body {
+  line-height: 160%;
 	font-family: @base-font;
 	color: @text-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 // Headings
 // --------------------------------------------------
 h1, h2, h3, h4, h5, h6 {
 	font-family: @heading-font;
+  color: @base-color;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
 
 // Links
@@ -88,16 +95,18 @@ figcaption {
 // --------------------------------------------------
 blockquote {
 	font-family: @alt-font;
-	font-style: italic;
-	.font-size(20);
+	.font-size(16);
+  line-height: 160%;
 	padding-left: 20px;
+  margin: 30px 0;
   color: @soft-color;
-	border-left: 8px solid @black;
+	border-left: 8px solid @accent-color;
 }
 
 // Footnotes
 // --------------------------------------------------
 .footnotes {
+  margin-top: 60px;
 	.font(14);
 	font-family: @base-font;
 }
@@ -110,16 +119,17 @@ tt, code, kbd, samp, pre {
 p,
 li { 
 	code {
-		.font(12);
+		.font(16);
 		white-space: nowrap;
 		margin: 0 2px;
-		padding: 0 5px;
-		border: 1px solid lighten(@black, 90);
-		background-color: lighten(@black, 95);
+		padding: 5px;
+		border: 1px solid lighten(@black, 94);
+		background-color: lighten(@black, 98);
 		.rounded(3px);
 	}
 }
 pre {
-	.font(12);
+	.font(14);
 	overflow-x: auto;
 }
+
