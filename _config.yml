@@ -40,8 +40,9 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Vienna
 future:      true
-pygments:    true
+# pygments:    true
 markdown:    kramdown
+highlighter: pygments
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title
@@ -49,6 +50,7 @@ permalink:   /:categories/:title
 excerpt_separator: "\n\n"
 
 kramdown:
+  input: GFM
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
@@ -56,7 +58,7 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   header_offset: 0
   transliterated_header_ids: true
-  use_coderay: true
+  use_coderay: false
 
   coderay:
     coderay_line_numbers: 
