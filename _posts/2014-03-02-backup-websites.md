@@ -10,7 +10,8 @@ This article shows a way to back up a content management system like Wordpress, 
 
 These backups are created at __specified intervals__ (daily, weekly, monthly) whithout any interaction needed on our part.
 
-#### Advantages of backups to your machine
+Advantages of backups to your machine
+-------------------------------------
 
 - cheap storage space
 - fast download speed
@@ -59,7 +60,7 @@ The directory structure looks something like this:
 
 
 
-#### Setup
+### Setup
 
 Install with the packet manager of your choice. On Debian, you would use `sudo apt-get install rsnapshot`.
 
@@ -157,11 +158,11 @@ backup		user@server:/path/to/website2/	website2/
 
 Some information about the important options:
 
-#### Retention Time
+### Retention Time
 
 `interval daily 7` means that rsnapshot keeps 7 backups made with the `daily` tag. So if you run `rsnapshot daily` every day, this amounts to one week of daily backups. The intervals[^3] defined in the config file work together with the cron options to schedule the backups. These are described later.
 
-#### Postexec
+### Postexec
 
 I use the `postexec` option to run the following script after the backup. It removes the `unused` directories we had to define with the `backup_script` option, but don't have any purpose. We also write the disk usage with `rsnapshot du` to the config file. I use [Geektool] to show the contents of the backup logfile on my desktop.
 
@@ -180,7 +181,7 @@ echo "disk usage:" >> $backup_log
 rsnapshot du       >> $backup_log
 ~~~
 
-#### Test
+### Test
 
 The `rsnapshot configtest` command validates the config in `/etc/rsnapshot.conf`.
 Given that passwordless SSH authentication from backupserver to webserver is set up, a `rsnapshot daily` backup should now be possible, if you keep the `backup_script` options commented out. We'll set up the database backup script in just a moment.
@@ -262,7 +263,7 @@ Finally, we schedule the backup jobs to run according to their tags. Put the fol
 0 6 1 * *	rsnapshot monthly >> /home/xbian/rsnapshot/backup.log 2>&1
 ~~~
 
-#### Notifications
+### Notifications
 
 I decided to write all messages to the `backup.log` logfile. However, if you want to receive cron notifications via email, just call `rsnapshot [tag]` and skip the redirection part. Now, cron will mail all output of the backup to your user. If there's no output, you get no mail.
 

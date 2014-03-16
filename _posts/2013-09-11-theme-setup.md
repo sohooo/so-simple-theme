@@ -9,7 +9,8 @@ tags: [jekyll, theme, install, setup]
 
 This post is included in the awesome Jekyll theme called [So Simple](http://mademistakes.com/articles/so-simple-jekyll-theme/) you're looking at. All credits to [Michael Rose](http://mademistakes.com)! These are general notes and suggestions for customizing **So Simple Theme**.
 
-## Basic Setup for a new Jekyll site
+Basic Setup for a new Jekyll site
+---------------------------------
 
 1. [Install Jekyll](http://jekyllrb.com) and read through the documentation if you haven't already.
 2. Fork the [So Simple Theme repo](https://github.com/mmistakes/so-simple-theme/fork)
@@ -25,7 +26,8 @@ This post is included in the awesome Jekyll theme called [So Simple](http://made
 
 ---
 
-## Setup for an Existing Jekyll site
+Setup for an Existing Jekyll site
+---------------------------------
 
 1. Clone the following folders: `_includes`, `_layouts`, `assets`, and `images`.
 2. Clone the following files and personalize content as need: `about.md`, `articles.html`, `index.html`, `tags.html`, `feed.xml`, and `sitemap.xml`.
@@ -83,7 +85,8 @@ permalink:   /:categories/:title
 
 ---
 
-## Folder Structure
+Folder Structure
+----------------
 
 {% highlight bash %}
 so-simple-theme/
@@ -116,7 +119,8 @@ so-simple-theme/
 
 ---
 
-## Customization
+Customization
+-------------
 
 ### _config.yml
 
@@ -240,7 +244,8 @@ So Simple Theme now supports **link posts**, made famous by John Gruber. To acti
 
 ---
 
-## Theme Development
+Theme Development
+-----------------
 
 If you want to easily skin the themes' colors and fonts, take a look at `variables.less` in `assets/less/` and make the necessary changes to the color and font variables. To make development easier I setup a Grunt build script to compile/minify the LESS files into `main.min.css` and lint/concatenate/minify all scripts into `scripts.min.js`. [Install Node.js](http://nodejs.org/), then [install Grunt](http://gruntjs.com/getting-started), and then finally install the dependencies for the theme contained in `package.json`:
 
@@ -254,11 +259,13 @@ And if the command line isn't your thing (you're using Jekyll so it probably is)
 
 ---
 
-## Questions?
+Questions?
+----------
 
 Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@mmistakes](http://twitter.com/mmistakes) or [file a GitHub Issue](https://github.com/mmistakes/so-simple-theme/issues/new).
 
-## License
+License
+-------
 
 This theme is free and open source software, distributed under the [GNU General Public License]({{ site.url }}/LICENSE) version 2 or later. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
 
