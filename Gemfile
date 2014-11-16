@@ -8,6 +8,8 @@ gem 'rake'
 gem 'thor'
 gem 'activesupport'
 gem 'foreman'
+gem 'kramdown'
+gem 'stringex'
 
 # generate favicons
 gem "favicon_maker"
