@@ -6,3 +6,5 @@ codekit-config.json
 node_modules
 Gemfile.lock
 _last_deploy.txt
+assets/css/main.min.css
+assets/js/scripts.min.js

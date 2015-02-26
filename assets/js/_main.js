@@ -51,7 +51,8 @@ enquire.register("only screen and (min-width: 62.5em)", {
       $('#toc').toc();
       $("#toc").stick_in_parent({
         parent: 'body',
-        offset_top: 30
+        offset_top: 30,
+        recalc_every: 1
       });
     },
 
