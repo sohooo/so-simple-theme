@@ -30,6 +30,7 @@ $(function() {
 
 // Behaviour on Breakpoints
 // conditionally load TOC, on mq @large
+// TOC Lib: http://projects.jga.me/toc/
 enquire.register("only screen and (min-width: 62.5em)", {
 
     // OPTIONAL
@@ -48,7 +49,9 @@ enquire.register("only screen and (min-width: 62.5em)", {
     // OPTIONAL
     // If supplied, triggered once, when the handler is registered.
     setup : function() {
-      $('#toc').toc();
+      $('#toc').toc({
+        'container': 'article'
+      });
       $("#toc").stick_in_parent({
         parent: 'body',
         offset_top: 30,
