@@ -1,7 +1,8 @@
 title:            txt
+name:             txt.intothespirit.com
 description:      articles on technology
 logo:             logo.png
-disqus_shortname: 
+disqus_shortname:
 search:           true
 #Change url to your domain. Leave localhost server or blank when working locally.
 url: http://txt.intothespirit.com
@@ -16,13 +17,13 @@ owner:
   github:         sohooo
   tumblr:         sohooo
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
+  google_plus:
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
+google_analytics:
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -61,7 +62,7 @@ kramdown:
   use_coderay: false
 
   coderay:
-    coderay_line_numbers: 
+    coderay_line_numbers:
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
     coderay_bold_every: 10
