@@ -14,7 +14,7 @@ end
 desc 'Preview on local machine (server with --auto)'
 task :preview => :clean do
   set_url('http://localhost:4000')
-  sh "foreman start"
+  sh "bundle exec foreman start"
 end
 
 desc 'Static build (build using filesystem)'
@@ -37,14 +37,14 @@ end
 
 desc 'Create a post'
 task :create_post, [:post, :date, :content] do |t, args|
-  if args.post == nil or 
+  if args.post == nil or
      (args.date and args.date.match(/[0-9]+-[0-9]+-[0-9]+/) == nil) then
     puts "Usage: create post TITLE [DATE]"
     puts "Date is in the form: Y-m-d"
     exit 1
   end
 
-  post_title= args.post 
+  post_title= args.post
   post_date= args.date || Time.new.strftime("%Y-%m-%d %H:%M:%S")
 
   # remove the time from post_date (the filename does not support it)
@@ -53,8 +53,8 @@ task :create_post, [:post, :date, :content] do |t, args|
   # generate a unique filename appending a number
   i = 1
   while File.exists?($post_dir + filename) do
-    filename = post_date[0..9] + "-" + 
-               post_title.gsub(' ', '_') + "-" + i.to_s + 
+    filename = post_date[0..9] + "-" +
+               post_title.gsub(' ', '_') + "-" + i.to_s +
                ".textile"
     i += 1
   end
@@ -68,7 +68,7 @@ task :create_post, [:post, :date, :content] do |t, args|
         f.puts "date: #{post_date}"
         f.puts "---"
         f.puts args.content if args.content != nil
-      end  
+      end
 
       puts "Post created under \"#{$post_dir}#{filename}\""
 
@@ -83,11 +83,11 @@ desc 'Create a post with all changes since last deploy'
 task :post_changes do |t, args|
   content = "Recent changes on the website:\n\n"
   content << "<ul>\n"
-  IO.popen('find * -newer _last_deploy.txt') do |io| 
+  IO.popen('find * -newer _last_deploy.txt') do |io|
     while (line = io.gets) do
       content << myprocess(line)
     end
-  end 
+  end
   content << "</ul>\n"
 
   Rake::Task["create_post"].invoke("Recent Changes", Time.new.strftime("%Y-%m-%d %H:%M:%S"), content)
@@ -111,12 +111,12 @@ EXCLUSION_REGEXPS = [/.*~/, /_.*/, /javascripts/, /stylesheets/, /Rakefile/, /Ge
 def file_matches(filename)
   output = EXCLUSION_REGEXPS.each.collect { |x| filename.index(x) != nil }.include?(true)
   not output
-end 
+end
 
 def file_change_ext(filename, newext)
   if File.extname(filename) == ".textile" or File.extname(filename) == ".md" then
     filename.sub(File.extname(filename), newext)
-  else  
+  else
     filename
   end
 end
@@ -156,7 +156,7 @@ def cleanup
 end
 
 def jekyll(directives = '')
-  sh 'jekyll ' + directives
+  sh 'bundle exec jekyll ' + directives
 end
 
 # set the url in the configuration file
@@ -172,6 +172,4 @@ def set_url(url)
     end
     File.open(config_filename, "w") { |file| file << puts }
   end
-end 
-
-
+end
